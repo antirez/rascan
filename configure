@@ -1,0 +1,39 @@
+#!/bin/sh
+
+echo build byteorder.c...
+cc byteorder.c -o byteorder || exit 1
+
+BYTEORDER=`./byteorder -m`
+
+echo create byteorder.h...
+cat > byteorder.h <<EOF
+#ifndef __BYTEORDER_H
+#define __BYTEORDER_H
+
+EOF
+echo \#ifndef $BYTEORDER >> byteorder.h
+echo \#define $BYTEORDER >> byteorder.h
+echo \#endif /\* $BYTEORDER \*/ >> byteorder.h
+cat >> byteorder.h <<EOF
+
+#endif /* __BYTEORDER_H */
+EOF
+
+CONFIGOSTYPE=`uname -s | tr a-z A-Z`
+if [ ! "$CONFIGOSTYPE" ]; then
+	CONFIGOSTYPE=UNKNOWN
+fi
+
+cat > systype.h <<EOF
+#ifndef __SYSTYPE_H
+#define __SYSTYPE_H
+
+EOF
+echo \#define OSTYPE_${CONFIGOSTYPE} >> systype.h
+cat >> systype.h <<EOF
+
+#endif /* SYSTYPE_H */
+EOF
+
+echo system type: $CONFIGOSTYPE
+echo now you can try \`make\'

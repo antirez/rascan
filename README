@@ -1,0 +1,15 @@
+This is a prototype for a multi-process port scanner I wrote between 1998
+and 1999. I'm putting this on Github only for my own archival purposes,
+I belive today it is of no interest at all.
+
+Original README follows:
+
+rascan is a SYN/FIN port scanner. It is very fast and isn't totally
+"automatic" (as for exaple namp[2]), it asks for timeout and is a lot
+verbose.  Now it works only under linux and is bad coded. See CHANGES
+file if you want to know next developing goals. rascan is copyright (C) 1999
+by Salvatore Sanfilippo and comes under GPL version 2 of license.
+Send feedbacks to <antirez@invece.org>
+
+have fun,
+antirez

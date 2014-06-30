@@ -1,0 +1,6 @@
+Nov 4 1999	After 8 months I come back to mantain and develop rascan.
+		Current status: a SYN/FIN port scanner in a single C file,
+		only per linux, very very fast with a nice option to scan
+		a specific port of a C class in some second. The first goal
+		is to obtain a more portable software splitted in more than
+		one C file and to recode some part that are very dirty.
